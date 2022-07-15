@@ -1,0 +1,110 @@
+.searchInputs {
+  display: flex;
+}
+
+.search {
+  width: 100%;
+ }
+
+.search input {
+  background-color: white;
+  border: 0;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 18px;
+  padding: 15px;
+  width: 100%;
+ }
+
+ .searchButton{
+   border:1px solid #ff9d30;
+   padding: 0;
+ }
+
+ .MuiSvgIcon-root{
+   fill: black !important;
+ }
+
+.searchIcon {
+  height: 60px;
+  width: 97px;
+  background-color: #ff9d30;
+  cursor:pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.searchIcon a {
+  display: block;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.searchIcon svg {
+  font-size: 35px;
+  position: absolute;
+  top: 25%;
+  left: 32%;
+}
+
+.searchIcon:hover {
+  background-color: #ff7618;
+}
+
+.dataResult {
+  margin-top: 5px;
+  width: 90%;
+  height: auto;
+  max-height: 250px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 1000;
+}
+.dataErrorResult {
+  margin-top: 5px;
+  width: 98%;
+  height: 150px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 1000;
+}
+
+.dataItem {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dataItem:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.dataItem:hover{
+  background-color: #fffcf2;
+  /* color: #7db1ff; */
+}
+
+#clearBtn {
+  cursor: pointer;
+}
+
+.title{
+  margin:5px 15px;
+  font-weight: bold;
+  color: #b2b2b2;
+  font-size: 14px;
+}
+
+.artist {
+  padding-left: 30px;
+  font-weight: 600;
+  color: #b2b2b2;
+}
