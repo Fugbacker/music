@@ -11,8 +11,10 @@ import style from '../search/Search.module.css'
 const Search = () => {
   const router = useRouter()
   const [enterText, setEnterText] = useState('')
+  const [chooseTrack, setChooseTrack] = useState('')
   const [trackList, setTrackList] = useState('')
   console.log('trackList', trackList)
+  console.log('chooseTrack', chooseTrack)
 
   const toolTipsMusicTrack = async (subject = '') => {
     const response = await axios.get(`/api/tooltips?text=${subject}`)
@@ -25,11 +27,11 @@ const Search = () => {
     toolTipsMusicTrack(e.target.value)
   }
 
-  // const updateInputText = ({ name, number }) => {
-  //   setEnterText(name)
-  //   setCadNumber(number)
-  //   setValue([])
-  // }
+  const updateInputText = ({ name, title, id }) => {
+    setEnterText(`${name}, ${title}`)
+    setChooseTrack(`${name}, ${title}, ${id}`)
+    setTrackList([])
+  }
 
   // const clearInput = () => {
   //   setValue([])
@@ -42,10 +44,10 @@ const Search = () => {
     setTrackList('')
   }
 
-  useEffect(() => {
-    document.addEventListener('click', clearToolTips)
-    return () => document.removeEventListener('click', clearToolTips)
-  }, [])
+  // useEffect(() => {
+  //   document.addEventListener('click', clearToolTips)
+  //   return () => document.removeEventListener('click', clearToolTips)
+  // }, [])
 
 
   return (
@@ -56,7 +58,7 @@ const Search = () => {
             <input
               className={style.imputSearch}
               type="text"
-              placeholder="Артист или название трэка"
+              placeholder="Исполнитель или название трека"
               value={enterText}
               onChange={onChange}
             />
@@ -65,17 +67,22 @@ const Search = () => {
               type="button"
               autoComplete="off"
               disabled={enterText.length < 4}
-              // onClick={() => {
-              //   askReestr(cadNumber, enterText)
-              //   setLoading(true)
-              //   router.push(`/object/${cadNumber || enterText}`)
-              // }}
             >
               <div aria-hidden="true" className={style.searchIcon}>
-                {enterText.length === 0 ? (
-                  <BsSearch />
+                {trackList.length === 0 ? (
+                  <BsSearch
+                    onClick={() => {
+                      askReestr(cadNumber, enterText)
+                      setLoading(true)
+                      // router.push(`/object/${cadNumber || enterText}`)
+                    }}
+                  />
                 ) : (
-                  <AiOutlineCloseCircle />
+                  <AiOutlineCloseCircle
+                    onClick={() => {
+                      clearToolTips()
+                    }}
+                  />
                 )}
               </div>
             </button>
@@ -89,7 +96,7 @@ const Search = () => {
                     <div
                       className={style.dataItem}
                       aria-hidden="true"
-                      onClick={() => updateInputText({ name: it.full_name, number: it.cadnum })}
+                      onClick={() => updateInputText({ name: it.aname, title: it.title, id: it.id })}
                       key={`${index + uniqueKey}`}
                     >
                       <p className={style.artist}>{it.aname}</p>

@@ -29,9 +29,10 @@ input {
 
  .mainFirst {
   background-image: url(../public/images/music.jpg);
-  padding-top: 21px;
+  padding-top: 50px;
   position: relative;
-  background-size: contain;
+  background-size: cover;
+  padding-bottom: 50px;
 }
 
 
@@ -39,4 +40,23 @@ input {
   width: 1100px;
   margin: 0 auto;
   position: relative;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.main_descr {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 22px;
+  color: #ffffff;
+  margin-top: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+@media (max-width: 1100px) {
+  .content {
+    width: 100%;
+  }
 }

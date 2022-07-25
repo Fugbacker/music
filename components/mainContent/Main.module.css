@@ -1,0 +1,101 @@
+
+.main_first_info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 90px;
+  z-index: 1;
+}
+
+
+/* .main_first_infoItem_first::before {
+  background-size: cover;
+  width: 34.59px;
+  height: 38px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -6px;
+  left: 0;
+} */
+
+.main_first_infoItem_title h2, .main_first_infoItem_title2 h2, .main_first_infoItem_title3 h2{
+  font-weight: 800;
+  line-height: 25px;
+  color: #335C9B;
+  text-align: center;
+  display: flex;
+}
+
+.main_first_infoItem_title h2::before {
+  color: #253a61;
+  content: url(../../public/images/search.png);
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.main_first_infoItem_title2 h2::before {
+  color: #253a61;
+  content: url(../../public/images/listening.png);
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.main_first_infoItem_title3 h2::before {
+  color: #253a61;
+  content: url(../../public/images/download.png);
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.main_first_infoItem_links {
+  font-size: 13px;
+  margin-top: 16px;
+  display: block;
+}
+
+.main_first_infoItem_links .a {
+  margin-top: 19px;
+  display: inline-block;
+  line-height: 15px;
+}
+
+.a._inner, .a._inner:hover {
+  -webkit-text-decoration-style: dotted;
+  text-decoration-style: dotted;
+}
+
+.main_first_infoItem {
+  background: white;
+  display: inline-block;
+  width: 32%;
+  vertical-align: top;
+  height: 170px;
+  margin:5px 0;
+  transition: all 0.3s ease;
+}
+
+.main_first_infoItem:hover {
+  box-shadow: inset 0 0 0 3px #fd02fd;
+}
+
+
+.main_first_infoItem_descr {
+  font-size: 13px;
+  line-height: 16px;
+  color: #8c8c8c;;
+  text-align: justify;
+  padding: 0 25px;
+}
+
+
+@media (max-width: 1000px) {
+  .main_first_info {
+    flex-direction: column;
+  }
+
+  .main_first_infoItem {
+    width: 100%;
+  }
+}

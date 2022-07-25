@@ -12,7 +12,7 @@ export default async function domclick(req, res) {
     const arr = Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step))
     array = arr
   }
-  range(1653256, 2000000, 1);
+  range(3915465, 4000000, 1);
 
   const BUCKET_SIZE = 300
   const bucketArr = array.reduce(
@@ -49,7 +49,7 @@ export default async function domclick(req, res) {
          }
         }).
             then(async (response) => {
-              if (response.data.data.getArtists.length !== 0 && response.data.data.getArtists[0].popularTracks.length !== 0 && response.data.data.getArtists[0].title !== 'Various Artists') {
+              if (response?.data?.data?.getArtists?.length !== 0 && response?.data?.data?.getArtists[0]?.popularTracks.length !== 0 && response?.data?.data?.getArtists[0]?.title !== 'Various Artists' && response?.data?.data?.getArtists[0] !== null)  {
                 console.log('ИТЕРАЦИЯ: ', it, 'ИСПОЛНИТЕЛЬ', response.data.data.getArtists[0].title)
                 const db = client.db('music')
                 const collection = db.collection('allMusic')
@@ -77,7 +77,7 @@ export default async function domclick(req, res) {
                  }
                 }).
                 then(async (response) => {
-                  if (response.data.data.getArtists.length !== 0 && response.data.data.getArtists[0].popularTracks.length !== 0 && response.data.data.getArtists[0].title !== 'Various Artists') {
+                  if (response?.data?.data?.getArtists?.length !== 0 && response?.data?.data?.getArtists[0]?.popularTracks.length !== 0 && response?.data?.data?.getArtists[0]?.title !== 'Various Artists' && response?.data?.data?.getArtists[0] !== null)  {
                     const db = client.db('music')
                     const collection = db.collection('allMusic')
                     await collection.insertOne(response.data.data.getArtists[0])
@@ -105,7 +105,7 @@ export default async function domclick(req, res) {
                      }
                     }).
                     then(async (response) => {
-                      if (response.data.data.getArtists.length !== 0 && response.data.data.getArtists[0].popularTracks.length !== 0 && response.data.data.getArtists[0].title !== 'Various Artists') {
+                      if (response?.data?.data?.getArtists?.length !== 0 && response?.data?.data?.getArtists[0]?.popularTracks.length !== 0 && response?.data?.data?.getArtists[0]?.title !== 'Various Artists' && response?.data?.data?.getArtists[0] !== null)  {
                         const db = client.db('music')
                         const collection = db.collection('allMusic')
                         await collection.insertOne(response.data.data.getArtists[0])
@@ -133,7 +133,7 @@ export default async function domclick(req, res) {
                          }
                         }).
                         then(async (response) => {
-                          if (response.data.data.getArtists.length !== 0 && response.data.data.getArtists[0].popularTracks.length !== 0 && response.data.data.getArtists[0].title !== 'Various Artists') {
+                          if (response?.data?.data?.getArtists?.length !== 0 && response?.data?.data?.getArtists[0]?.popularTracks.length !== 0 && response?.data?.data?.getArtists[0]?.title !== 'Various Artists' && response?.data?.data?.getArtists[0] !== null)  {
                             const db = client.db('music')
                             const collection = db.collection('allMusic')
                             await collection.insertOne(response.data.data.getArtists[0])
@@ -151,7 +151,7 @@ export default async function domclick(req, res) {
               }
             })
             .catch((e)=> {
-              console.log(e.response.status)
+              console.log(e)
             })
         )
       )

@@ -1,0 +1,88 @@
+.topListContainer {
+  margin-bottom: 50px;
+}
+
+.topItem {
+  display: grid;
+  margin-top:10px;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  grid-template-columns: [number] auto [pic] auto [text] minmax(65px, 2fr) [album] minmax(65px, 1.7fr) [actions] 1fr;
+  gap: 30px;
+}
+
+
+.topItem:hover {
+  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 6px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.listNumber{
+  color:#930E8E;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.topH2 {
+  text-align: center;
+  font-size: 30px;
+  margin:50px 0;
+  color:#335C9B;
+}
+
+.photoArtist {
+  display: flex;
+  align-items: center;
+}
+
+.topArtistName {
+  color:#930E8E;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.topTrackName {
+  color: #335C9B;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.download {
+  background-image: url(../../public/images/play.png);
+  width: 90px;
+  height: 30px;
+  align-self: center;
+}
+
+@media (max-width: 500px) {
+  .download {
+    width: 30px;
+  }
+ }
+
+ @media (max-width: 350px) {
+  .photoArtist {
+    display: none;
+  }
+
+  .download {
+    display: none;
+  }
+
+  .listNumber {
+    display: none;
+  }
+
+  .topItem {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+ }

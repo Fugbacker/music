@@ -1,4 +1,8 @@
+import Header from "../components/header/header"
 import Search from "../components/search/search"
+import Footer from "../components/footer/footer"
+import MainContent from "../components/mainContent/main"
+import TopList from "../components/topList/topList"
 
 export default function Main() {
   return (
@@ -20,13 +24,24 @@ export default function Main() {
         <meta name="google-site-verification" content="d7nM5co9tCDgOHbh1cEhBWccqxN65ZuWuXfhRq0Z4bQ" />
       </Head> */}
       <div className="first">
+        <Header />
         <div className="main">
           <div className="mainFirst">
             <div className="content">
+              <h1 className="main_descr">
+                  Качаем и слушаем любимые треки
+              </h1>
               <Search />
+              <MainContent />
+            </div>
+          </div>
+          <div className="trackList">
+            <div className="content">
+              <TopList />
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   )
